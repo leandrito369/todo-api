@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bitácora — Gestor de tareas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="page">
+
+    <header class="masthead">
+      <div class="masthead-top">
+        <span class="tag">REGISTRO N.° 01</span>
+        <span class="tag tag-date" id="today-date"></span>
+      </div>
+      <h1 class="title">Bitácora</h1>
+      <p class="subtitle">Cuaderno de tareas pendientes — Trabajo Práctico de Leandro Lobayan</p>
+      <div class="rule"></div>
+    </header>
+
+    <section class="composer">
+      <form id="task-form" autocomplete="off">
+        <div class="field field-title">
+          <label for="title">Asunto</label>
+          <input type="text" id="title" placeholder="¿Qué hay que hacer?" required />
+        </div>
+
+        <div class="field field-priority">
+          <label for="priority">Prioridad</label>
+          <select id="priority">
+            <option value="baja">Baja</option>
+            <option value="media" selected>Media</option>
+            <option value="alta">Alta</option>
+          </select>
+        </div>
+
+        <div class="field field-due">
+          <label for="due_date">Vence</label>
+          <input type="date" id="due_date" />
+        </div>
+
+        <div class="field field-desc">
+          <label for="description">Notas</label>
+          <input type="text" id="description" placeholder="Detalle opcional" />
+        </div>
+
+        <button type="submit" class="btn-add">Anotar tarea</button>
+      </form>
+      <p id="form-error" class="form-error" hidden></p>
+    </section>
+
+    <section class="board">
+      <div class="board-header">
+        <h2>Pendientes</h2>
+        <div class="filters">
+          <button class="filter-btn active" data-filter="">Todas</button>
+          <button class="filter-btn" data-filter="pendiente">Pendientes</button>
+          <button class="filter-btn" data-filter="completada">Completadas</button>
+          <button class="filter-btn" data-filter="cancelada">Canceladas</button>
+        </div>
+      </div>
+
+      <div id="task-list" class="task-list">
+        <p class="empty-state" id="empty-state">No hay tareas anotadas todavía.</p>
+      </div>
+    </section>
+
+    <footer class="colophon">
+      <p>API: <code id="api-status">comprobando conexión…</code></p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

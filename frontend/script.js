@@ -1,9 +1,7 @@
-// ── Configuración ──────────────────────────────────────────────────────────
-// IMPORTANTE: reemplazar por la URL real del backend deployado en Render
-// (consigna 4 del TP8). Mientras desarrollás en local, dejá localhost.
+
 const API_URL = window.location.hostname === "localhost"
   ? "http://localhost:5000"
-  : "https://TU-BACKEND.onrender.com"; // <-- reemplazar tras deployar en Render
+  : "https://todo-api-t0vn.onrender.com"; 
 
 // ── Estado ──────────────────────────────────────────────────────────────────
 let allTasks = [];
